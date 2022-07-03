@@ -42,7 +42,6 @@
           {% endif %}
         {% endif %}
       {% endfor %}
-      <div class="sidebar-nav-item"><a href="{{site.baseurl}}/photo.html">影集</a></div>
       <div class="sidebar-nav-item"><a href="https://github.com/AUGUSTRUSH8/AugustRush8.github.io/issues">留言</a></div>
       {% comment %}
         Add GitHub talk page link at last.
@@ -54,16 +53,12 @@
         <a href="https://github.com/{{site.author.github}}"><span class="icon icon-github"></span></a>
       {% endif %}
 
-      {% if site.author.linkedin %}
-        <a href="https://cn.linkedin.com/in/{{site.author.linkedin}}"><span class="icon icon-linkedin"></span></a>
+      {% if site.author.twitter %}
+        <a href="https://twitter.com/{{site.author.twitter}}"><span class="icon icon-twitter"></span></a>
       {% endif %}
 
       {% if site.author.weibo %}
         <a href="https://weibo.com/{{site.author.weibo}}"><span class="icon icon-weibo"></span></a>
-      {% endif %}
-
-      {% if site.author.facebook %}
-        <a href="https://www.facebook.com/{{site.author.facebook}}"><span class="icon icon-facebook"></span></a>
       {% endif %}
 
       <a href="{{site.baseurl}}/atom.xml"><span class="icon icon-rss"></span></a>

@@ -12,7 +12,7 @@ title:            'August Rush'
 
 # Markdown enabled, however don't use more than one paragraph (enforced by `>`)
 description:      >
-  关于[代码](https://github.com/AUGUSTRUSH8)、[生活](https://www.jianshu.com/u/610a52a4981b)、[爱](/photo.html)和[一切](/)。
+  关于[代码](https://github.com/AUGUSTRUSH8)、生活、爱和一切。
 
 
 # Fallback image and color if not overwritten for tag or post
@@ -24,9 +24,8 @@ author:
   name:           'AugustRush'
   email:          643098432@qq.com
   github:         AugustRush8
-  linkedin:       AugustRush8
+  twitter:        tianhang12
   weibo:          u/5065802307
-  facebook:       profile.php?id=100034462493689
   photo:          /public/images/logo.jpg
 
 
