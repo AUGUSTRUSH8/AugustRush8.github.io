@@ -16,7 +16,7 @@ description:      >
 
 
 # Fallback image and color if not overwritten for tag or post
-image:            http://image.augustrush8.com/images/avatar/sunset.jpg
+image:            /public/images/sunset.jpg
 color:            '#dc322f'
 
 
