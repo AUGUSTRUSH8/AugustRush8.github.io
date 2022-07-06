@@ -21,5 +21,6 @@
           \/ZZZZZZZZZZZZZZZZZ/
 ```
 
-### hello world, this is my blog!
-想了解更多？欢迎关注我的公众号，《代码真香》
+## 公众号 🌈
+
+![](http://image.augustrush8.com/images/wechat/wechat_qr_code.png)
