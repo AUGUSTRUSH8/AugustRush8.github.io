@@ -6,7 +6,7 @@ tags: [code]
 
 类似淘口令的还有支付宝的 “吱口令”。口令码分享除了淘宝系之外的应用并不广泛，一是其本身就需要一套完整的口令产生与识别系统，同时还涉及加密等，本身是较为复杂的，开发难度大；二是其限制了受众必须进入相同的 APP 内才能访问对应内容，等同于用户分享的并不是内容本身，而是打开内容的钥匙，这很大程度上限制了用户的使用。
 
-![](http://image.augustrush8.com/images/blog/taokouling.png)
+![taokouling.png](https://s2.loli.net/2022/07/10/aF5BXD1ImC8nrck.png)
 
 阿里使用口令方式进行分享，也完全是基于腾讯对其商品分享的制约，口令分享这种方式，可以算是巨头们较量的无奈产物了。
 
@@ -21,7 +21,7 @@ tags: [code]
 
 “淘口令” 大体原理其实并不怎么复杂，其实现方式，不外乎是，用户复制淘口令的文本， 打开 APP 的时候，APP 会自动读取剪贴板中的数据，然后截取对应的口令，上传到服务端，然后解析出来相应的信息：
 
-![](http://image.augustrush8.com/images/blog/taokouling-flow.png)
+![taokouling-flow.png](https://s2.loli.net/2022/07/10/OXm9qbjoR1idlkE.png)
 
 淘口令的格式有多种，比如：
 
@@ -40,7 +40,7 @@ tags: [code]
 
 相比最上面的口令标识符，这里的口令标识符却更加复杂，其中 “6 e:/ 嘻是地时们在小了去以而以嘻” 为淘口令。提取口令的正则为：`\d\s\w:/(.*?)\s`
 
-![](http://image.augustrush8.com/images/blog/taokouling-decode.png)
+![taokouling-decode.png](https://s2.loli.net/2022/07/10/SxiIbaflXrBcnoy.png)
 
 淘口令的实际上是个 key-value 的键值对数据，其中 key 为口令，而 value 是一个字典类型的数据码，中间包括：原始链接、商品 ID、口令标题、口令图标等。上面演示的英文型的口令还是中文型的口令只不过是编码方式的不同而已。
 
