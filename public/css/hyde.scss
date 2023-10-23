@@ -18,10 +18,10 @@
 
 /* Icon font for github, twitter, etc */
 @font-face {
-    font-family: 'icomoon';
-    src: url('../fonts/icomoon.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'icomoon';
+  src: url('https://blog.biezhi.me/public/fonts/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /*
@@ -36,13 +36,14 @@
   z-index: 4;
   text-align: center;
   padding: 2rem 1rem;
-  color: #c3c3c3;
+  color: rgba(255, 255, 255, .75);
   background-color: #202020 !important;
   text-align: left;
-  width: 20rem;
+
   background-size: cover;
   background-position: center center;
 }
+
 /* make sidebar slightly darker to increase text readability (when using a background image) */
 .sidebar::before {
   content: "";
@@ -55,23 +56,23 @@
 }
 
 /* Use larg desktop styles for mobile as well when the JS "drawer" is active */
-.drawer > .sidebar {
+.drawer>.sidebar {
   position: fixed;
   bottom: 0;
   top: 0;
-  left: -20rem;
+  left: -21rem;
   width: 20rem;
   will-change: transform;
   box-shadow: 0.25rem 0 0.3rem rgba(0, 0, 0, 0.15)
 }
 
-.drawer > .sidebar::before {
-  background: -moz-linear-gradient(bottom,  rgba(32,32,32,0) 0%, rgba(32,32,32,.5) 100%);
-  background: -webkit-linear-gradient(bottom,  rgba(32,32,32,0) 0%,rgba(32,32,32,.5) 100%);
-  background: linear-gradient(to bottom,  rgba(32,32,32,0) 0%,rgba(32,32,32,.5) 100%);
+.drawer>.sidebar::before {
+  background: -moz-linear-gradient(bottom, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, .5) 100%);
+  background: -webkit-linear-gradient(bottom, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, .5) 100%);
+  background: linear-gradient(to bottom, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, .5) 100%);
 }
 
-.drawer > .sidebar > .sidebar-sticky {
+.drawer>.sidebar>.sidebar-sticky {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
@@ -82,7 +83,7 @@
   display: none;
 }
 
-.drawer > #_backdrop {
+.drawer>#_backdrop {
   display: block;
   position: fixed;
   top: 0;
@@ -100,7 +101,7 @@
   overflow: hidden;
 }
 
-.drawer-open > #_backdrop {
+.drawer-open>#_backdrop {
   pointer-events: all;
 }
 
@@ -108,14 +109,14 @@
 #_menu {
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0rem;
+  left: 0rem;
   padding: 1rem;
   color: #9a9a9a;
 }
 
-@media (min-width: 1200px) {
-  .drawer > #_menu {
+@media (min-width: 900px) {
+  .drawer>#_menu {
     display: none;
   }
 
@@ -124,13 +125,23 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 22rem;
+    width: 19rem;
     /* Disable drawer positiioning on larger screens (already done via JS, but just to be sure) */
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -ms-transform: translate3d(0, 0, 0) !important;
     transform: translate3d(0, 0, 0) !important;
   }
+
   .sidebar::before {
-    background: linear-gradient(to bottom, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, 0.5) 100%);
+    background: -moz-linear-gradient(bottom, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, .5) 100%);
+    background: -webkit-linear-gradient(bottom, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, .5) 100%);
+    background: linear-gradient(to bottom, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, .5) 100%);
   }
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: #fff;
 }
 
 /*.sidebar a:hover, .sidebar a:focus {
@@ -138,46 +149,50 @@
 }*/
 
 /* About section */
-.sidebar-about > h1 {
+.sidebar-about>h1 {
   color: #fff;
   margin-top: 0;
   font-size: 2rem;
 }
-.sidebar-about img {
-  height: 55px;
-  width: auto;
-  margin-left: -5px; /* 使標題與其他元素視覺上左對齊 */
-}
-.sidebar-about a {
-  color: #c3c3c3 !important;
-}
+
 .sidebar-about a:hover {
   text-decoration: none;
+}
+
+.sidebar-about img {
+  width: auto;
+  margin-left: -5px;
 }
 
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1.25rem;
 }
+
 .sidebar-nav-item {
-  margin-bottom: 0.4rem;
-}
-.sidebar-nav-item > a {
-  display: inline-block;
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  text-decoration: none;
-  border-bottom: 2px solid #c3c3c3;
-}
-
-.sidebar-nav-item > a:hover {
-  text-decoration: none;
-  border-bottom: 2px solid #fff;
+  font-weight: bold;
+  display: block;
+  line-height: 1.75;
+  padding: .5rem .1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.23);
+  cursor: pointer;
 }
 
-.sidebar-nav-item > a.active {
-  border-bottom: 2px solid #fff;
+.sidebar-nav-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.sidebar-nav-item {
+  padding: .25rem .1rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sidebar-nav-item:hover {
+  background-color: rgba(32, 32, 32, 0.2);
+  text-decoration: none;
 }
 
 /* Disable the "white glow" that is used to make the laurel wreaths distinct form the background */
@@ -189,18 +204,18 @@
 .sidebar-social {
   margin-bottom: 1.25rem;
 }
-.sidebar-social > a,
-.sidebar-social > span {
-  color: #fff;
+
+.sidebar-social>a {
   font-size: 1.4rem;
   line-height: 1.4rem;
   margin-right: 1rem;
-  cursor: pointer;
 }
-.sidebar-social > a:last-child {
+
+.sidebar-social>a:last-child {
   margin-right: 0;
 }
-.sidebar-social > a:hover {
+
+.sidebar-social>a:hover {
   text-decoration: none;
 }
 
@@ -214,12 +229,12 @@
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
  * contents to the bottom of the sidebar in tablets and up.
  */
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .sidebar-sticky {
     position: absolute;
-    right:  1rem;
+    right: 1rem;
     bottom: 1rem;
-    left:   1rem;
+    left: 1rem;
   }
 }
 
@@ -230,59 +245,25 @@
  */
 
 .content {
-  padding-top:    4rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
   line-height: 1.7;
-
-  /*
-   * Ensure same content width when JS drawer is disabled.
-   * Failing to do this caused text reflowing, when the JS kicked in (adding the .drawer styles)
-   * and moved the drawer from the bottom to the side.
-   * Now the drawer is placed above the 0.3rem border on the side.
-   * It also looks kinda cool w/o the drawer.
-   */
-  // border-left: 0.3rem solid #fff;
-}
-
-@media (min-width: 800px) {
-  .content {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
 }
 
 
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
   .content {
-    margin-left: 4rem;
+    max-width: 50rem;
+    margin-left: 22rem;
     margin-right: 4rem;
   }
 }
 
-@media (min-width: 1200px) {
-  .content {
-    max-width: 52rem;
-    margin-left: 26rem;
-    margin-right: 4rem;
-  }
-}
-
-@media (min-width: 1400px) {
-  .content {
-    max-width: 54rem;
-    margin-left: 26rem;
-    margin-right: 4rem;
-  }
-}
-
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
   .content {
     max-width: 56rem;
-    margin-left: 26rem;
+    margin-left: 22rem;
     margin-right: 4rem;
-  }
-  .sidebar {
-    width: 24rem;
   }
 }
 
@@ -293,7 +274,8 @@
 }
 
 /* Icon font styles */
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   font-style: normal;
@@ -307,41 +289,65 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon.icon-dark-mode::before {
-  content: "\e9d5";
-}
+
 .icon.icon-calendar::before {
   content: "\e953";
 }
+
 .icon.icon-github::before {
   content: "\eab0";
 }
+
 .icon.icon-linkedin::before {
   content: "\eaca";
 }
+
 .icon.icon-weibo::before {
   content: "\ea9a";
 }
+
 .icon.icon-rss::before {
   content: "\ea9c";
 }
+
+.icon.icon-camera:before {
+  content: "\e90f";
+}
+
+.icon.icon-telegram:before {
+  content: "\ea95";
+}
+
+.icon.icon-twitter:before {
+  content: "\ea96";
+}
+
+.icon.icon-youtube:before {
+  content: "\ea9d";
+}
+
+.icon.icon-price-tags:before {
+  content: "\e936";
+}
+
+.icon.icon-stackoverflow:before {
+  content: "\ead0";
+}
+
 .icon.icon-facebook::before {
   content: "\ea91";
 }
+
 .icon.icon-google-plus::before {
   content: "\ea8b";
 }
+
 .icon.icon-instagram::before {
   content: "\ea92";
 }
+
 .icon.icon-dribbble::before {
   content: "\eaa7";
-}
-.icon.icon-twitter::before {
-  content: "\ea96";
-}
-.icon.icon-telegram::before {
-  content: "\ea95";
 }
 
 .icon.icon-rss,
@@ -350,15 +356,56 @@
 }
 
 .me {
-    width: 6.5rem;
-    margin-top: -4.8rem;
-    margin-left: 1rem;
-    border-radius: 100%;
-    position: relative;
-    z-index: 2;
-    float: right;
+  width: 6.5rem;
+  margin-top: -4.8rem;
+  margin-left: 1rem;
+  border-radius: 100%;
+  position: relative;
+  z-index: 2;
+  float: right;
 }
 
+.listing {
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+.listing-seperator {
+  font-weight: bold;
+}
+
+.listing-item,
+.listing-seperator {
+  list-style-type: none;
+}
+
+.listing-seperator {
+  font-size: 1.1rem;
+  padding-top: 20px;
+}
+
+.listing-item time {
+  color: #999;
+}
+
+.links {
+  line-height: 1.2;
+}
+
+.paginator a,
+.paginator span {
+  padding: 0 4px;
+  margin: 2px;
+  text-decoration: none;
+}
+
+.paginator>.previous.disabled {
+  color: #999;
+}
+
+.paginator>.next.disabled {
+  color: #999;
+}
 
 /*
  * Print Styles (by Yanbin Ma)
@@ -371,44 +418,174 @@
     margin: 2cm;
     size: A4;
   }
+
   html {
     font-family: "PT Serif", Georgia, "STSongti", "STZhongsong", "SimSun", serif;
     font-size: 14pt;
   }
-  #_sidebar, #_menu {
+
+  #_sidebar,
+  #_menu {
     display: none;
   }
+
   .container {
     max-width: 100%;
     margin: 0;
   }
+
   .content {
     padding: 0;
   }
+
   .content .message {
     border: 1px solid;
   }
+
   .content hr {
     visibility: hidden;
   }
+
   .content h2 {
     orphans: 2;
     widows: 2;
   }
+
   .content pre {
     white-space: pre-line;
     border-top: 1px solid;
     border-bottom: 1px solid;
   }
+
   .content p:not(.lead) {
     text-indent: 2em;
     margin-bottom: 0.6em;
   }
+
   .content blockquote p {
     text-indent: 0;
   }
+
   // To force this heading to always be the beginning of a page
   h1 {
     page-break-before: always;
   }
+}
+
+/*
+ * Reverse layout
+ *
+ * Flip the orientation of the page by placing the `.sidebar` on the right.
+ */
+
+@media (min-width: 48em) {
+  .layout-reverse .sidebar {
+    left: auto;
+    right: 0;
+  }
+
+  .layout-reverse .content {
+    margin-left: 2rem;
+    margin-right: 20rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .layout-reverse .content {
+    margin-left: 4rem;
+    margin-right: 22rem;
+  }
+}
+
+/*
+ * Themes
+ *
+ * As of v1.1, Hyde includes optional themes to color the sidebar and links
+ * within blog posts. To use, add the class of your choosing to the `body`.
+ */
+
+/* Base16 (http://chriskempson.github.io/base16/#default) */
+
+/* Red */
+.theme-base-08 .sidebar {
+  background-color: #c50502;
+}
+
+.theme-base-08 .content a,
+.theme-base-08 .related-posts li a:hover {
+  color: #c50502;
+}
+
+.theme-base-08 .content .vglnk {
+  color: #f05f70;
+}
+
+
+/* Orange */
+.theme-base-09 .sidebar {
+  background-color: #d28445;
+}
+
+.theme-base-09 .content a,
+.theme-base-09 .related-posts li a:hover {
+  color: #d28445;
+}
+
+.theme-base-0a .sidebar {
+  background-color: #282c34;
+}
+
+.theme-base-0a .content a,
+.theme-base-0a .related-posts li a:hover {
+  color: #21252b;
+}
+
+/* Green */
+.theme-base-0b .sidebar {
+  background-color: #90a959;
+}
+
+.theme-base-0b .content a,
+.theme-base-0b .related-posts li a:hover {
+  color: #90a959;
+}
+
+/* Cyan */
+.theme-base-0c .sidebar {
+  background-color: #75b5aa;
+}
+
+.theme-base-0c .content a,
+.theme-base-0c .related-posts li a:hover {
+  color: #75b5aa;
+}
+
+/* Blue */
+.theme-base-0d .sidebar {
+  background-color: #6a9fb5;
+}
+
+.theme-base-0d .content a,
+.theme-base-0d .related-posts li a:hover {
+  color: #6a9fb5;
+}
+
+/* Magenta */
+.theme-base-0e .sidebar {
+  background-color: #aa759f;
+}
+
+.theme-base-0e .content a,
+.theme-base-0e .related-posts li a:hover {
+  color: #aa759f;
+}
+
+/* Brown */
+.theme-base-0f .sidebar {
+  background-color: #8f5536;
+}
+
+.theme-base-0f .content a,
+.theme-base-0f .related-posts li a:hover {
+  color: #8f5536;
 }

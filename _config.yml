@@ -1,46 +1,86 @@
-# Permalinks
-permalink:        /post/:title.html
+title: HelloKaton
+url: https://blog.hellokaton.com
+baseurl: ''
+cdnurl: 'https://blog-biezhi-me-1251171175.cos.ap-shanghai.myqcloud.com'
+description: >
+  关于编程的一些想法。
 
-# Setup
-url:              https://blog.augustrush8.com
-img_url:          http://pkngrra8q.bkt.clouddn.com
+permalink: /:year/:month/:title.html
 
-# Set to '' in case of hosting on `https://<your-github-name>.github.io`
-baseurl:          ''
+image: /public/images/mountains.jpg
+color: '#dc322f'
+google_analytics: 
+baidu_analytics: 7a93302cab1b55a58512dcd89646266f
+disqus: flickerhub
 
-title:            'August Rush'
+markdown: kramdown
+highlighter: rouge
+paginate: 12
+paginate_path: "/page/:num"
 
-# Markdown enabled, however don't use more than one paragraph (enforced by `>`)
-description:      >
-  关于[代码](https://github.com/AUGUSTRUSH8)、生活、爱和一切。
-
-
-# Fallback image and color if not overwritten for tag or post
-image:            /public/images/sunset.jpg
-color:            '#dc322f'
-
-
+# 作者信息
 author:
-  name:           'AugustRush'
-  email:          643098432@qq.com
-  github:         AugustRush8
-  twitter:        tianhang12
-  weibo:          u/5065802307
-  telegram:       deep_insight_blog
-  photo:          /public/images/logo.jpg
+  name: flicker
+  email: 643098432@qq.com
+  photo: /public/images/avatar.jpeg
 
+# 社交信息
+socials:
+  - title: Github
+    icon: github-logo
+    url: https://github.com/AUGUSTRUSH8
+  - title: Twitter
+    icon: twitter
+    url: https://twitter.com/tianhang12
+  - title: Youtube
+    icon: youtube
+    url: https://www.youtube.com/channel/UCWHZ5F6d1GEXHotemoU2FOA
+  - title: 知乎主页
+    icon: zhihu
+    url: https://www.zhihu.com/people/tian-hang-39
 
-  # Markdown enabled, can use multiple paragraphs (enabled by `|`)
-  about:          |
-    我是August Rush，热爱编程，喜欢与人交流分享思想和 IT 技术。我的GitHub地址是 [AugustRush](https://github.com/AUGUSTRUSH8)
+# 友链
+links:
+  - title: seoui
+    url: http://blog.seoui.com/
+  - title: Data羊
+    url: http://www.datayang.com/
+  - title: HongQuan'Blog
+    url: https://www.devtool.top/
+  - title: 二三克
+    url: https://same.blog/
+  - title: vzardlloo
+    url: https://vzardlloo.github.io/
+  - title: Bakumon
+    url: https://bakumon.me/blog
+  - title: sunzhenyu
+    url: https://sunzhenyu.net/
+  - title: 代码和段子手
+    url: http://codefun007.xyz/
+  - title: hweining's garden
+    url: https://hweining.online/
+  - title: Bakumon
+    url: https://bakumon.me/blog/
+  - title: 练涛
+    url: https://blog.liantao.me/
+  - title: Printf520
+    url: https://printf520.com/
 
-
+# html 压缩
 compress_html:
-  clippings:      all
-  comments:       ["<!--", "-->"]
-  endings:        all
-  startings:      [html, head, body]
+  clippings: all
+  comments: ["<!--", "-->"]
+  endings: all
+  startings: [html, head, body]
 
+# sass 解析
 sass:
-  sass_dir:       /public/css
-  style:          compressed
+  sass_dir: public/css
+  style: compressed
+
+# 插件
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap

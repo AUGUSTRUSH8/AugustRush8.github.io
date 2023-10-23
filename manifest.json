@@ -1,24 +1,22 @@
 {
-  "short_name": "AugustRush",
-  "name": "AugustRush的博客",
-  "icons": [
-    {
-      "src": "/public/images/icons/launcher-icon-128x128.png",
-      "type": "image/png",
-      "sizes": "128x128"
-    },
-    {
-      "src": "/public/images/icons/launcher-icon-152x152.png",
-      "type": "image/png",
-      "sizes": "152x152"
-    },
-    {
-      "src": "/public/images/icons/launcher-icon-192x192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
-  "start_url": "/?utm_source=homescreen",
-  "display": "standalone",
-  "img_name": ["她值得我付出所有啊","我爱的她啊","独家记忆","银杏树下的牵手","黄葛树下的相依","婷婷和我第一场电影","校园被抓住的地方","那座城那个人","317Family","中北坦克","中北升旗","835路","丽江千古情外围","丽江古镇","华表","天坛前","图书馆前","彭德怀铜像","德怀楼公园","熊猫铁憨憨","手绘","拉什海","摩梭族舞蹈","昆明新晴","柏林园","深圳黄昏","百年技术","行知广场","感谢曾经努力的自己","重大月色","阿里小憩","中北操场傍晚"]
+    "short_name": "HelloKaton",
+    "name": "HelloKaton",
+    "icons": [{
+            "src": "/public/images/icons/launcher-icon-128x128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/public/images/icons/launcher-icon-152x152.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "/public/images/icons/launcher-icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "start_url": "/?utm_source=homescreen",
+    "display": "standalone"
 }

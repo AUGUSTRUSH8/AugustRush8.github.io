@@ -2,42 +2,49 @@
 layout: default
 ---
 
-{% assign post = page %}
-{% if post.tags.size > 0 %}
-  {% for post_tag in post.tags %}
-    {% assign tag = site.data.tags[post_tag] %}
-    {% if tag %}
-      {% capture tags_content_temp %}{{tags_content}}<a href="{{site.baseurl}}/{{post_tag}}/">{{tag.name}}</a>{% if forloop.last == false %}<span>和</span>{% endif %}{% endcapture %}
-      {% assign tags_content = tags_content_temp %}
-    {% endif %}
-  {% endfor %}
-{% else %}
-  {% assign tags_content = '' %}
-{% endif %}
-
 <article class="post">
   <h1 class="post-title">{{page.title}}</h1>
   <div class="post-date">
-    <span><span class="icon icon-calendar"></span> 发表于 <time datetime="{{page.date | date_to_xmlschema}}">{{page.date | date: '%Y年%m月%d日'}}</time> &middot;</span>
-    {% if tags_content != '' %}归类于{{tags_content}} &middot;{% endif %}
-    {{content | strip_html | strip_newlines | size | divided_by: 350 | round}} 分钟 &middot;
-    <span id="busuanzi_container_page_pv" style='display:none'>阅读量 <span id="busuanzi_value_page_pv"></span> &middot;</span>
-    <span><a href="https://github.com/myanbin/myanbin.github.io/edit/master/{{page.path}}">报告错误</a></span>
+    <span><span class="icon icon-calendar"></span> 发表于 <time datetime="{{page.date | date_to_xmlschema}}">{{page.date |
+        date: '%Y年%m月%d日'}}</time> &middot;</span>
+    {% if page.categories.size != 0 %}
+    归类于 {% for cat in page.categories %}
+    <a href="{{ site.baseurl }}/categories.html#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;
+    &middot;
+    {% endfor %}
+    {% endif %}
+    阅读量 <span id="busuanzi_value_page_pv">加载中...</span>
   </div>
   <hr class="post-divide">
-  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=25706282&auto=1&height=32"></iframe>
   {{content}}
 </article>
 
-{% if site.author.about %}
-<aside class="author">
-  <h2 class="aside-title">关于作者</h2>
+{% if page.tags.size != 0 %}
+<span class="tags">
+  <span class="icon icon-price-tags" style="color: #8c8b8b;font-size: .9rem;">&nbsp;</span>
+  {% for tag in page.tags %}
+  <a href="{{ site.baseurl }}/tags.html#{{ tag }}" title="{{ tag }}">#{{ tag }}</a>&nbsp;
+  {% endfor %}
+</span>
+{% endif %}
 
-  {% if site.author.photo %}
-  <audio src="{{site.baseurl}}/public/audio/cat.mp3" id="cat"></audio>
-  <img class="me" src="{{site.author.photo}}" alt="{{site.author.name}}" onclick="document.getElementById('cat').play()"/>
+<div style="margin-top: 1rem;padding-left: 0;">
+  <hr class="post-divide" />
+</div>
+<div class="post-pagination">
+  {% if page.previous %}
+  <a class="float-left" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">« {{
+    page.previous.title }}</a>
   {% endif %}
 
-  {{site.author.about | markdownify}}
-</aside>
+  {% if page.next %}
+  <a class="float-right" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title }}
+    »</a>
+  {% endif %}
+</div>
+<div class="clearfix"></div>
+
+<!-- Add Disqus Comments -->
+{% if site.disqus %}
+{% include disqus.html %}
 {% endif %}

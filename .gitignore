@@ -2,7 +2,7 @@
 _gh_pages
 _site
 .ruby-version
-
+.jekyll-cache
 # Numerous always-ignore extensions
 *.diff
 *.err
@@ -22,3 +22,4 @@ _site
 
 # Folders to ignore
 .sass-cache
+*.lock
