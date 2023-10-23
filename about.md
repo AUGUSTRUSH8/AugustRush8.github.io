@@ -1,53 +1,47 @@
 ---
 layout: page
-title: 关于
+title: "关于"
 permalink: about.html
-image: /public/images/redflag.jpg
-order: 5
+image: /public/images/sunset.jpg
+color: '#f44336'
+sequence: 9
 ---
 
+
+{% comment %}
+  This inserts the "about" photo and text from `_config.yml`.
+  You can edit it there (jekyll needs restart!) or remove it and provide your own photo/text.
+  Don't forget to add the `me` class to the photo, like this: `![alt](src){:.me}`.
+{% endcomment %}
+
 {% if site.author.photo %}
-![{{ site.author.name }}]({{ site.author.photo }}){:.me}
+  ![{{site.author.name}}]({{site.author.photo}}){:.me}
 {% endif %}
 
-博客只有在想起来 && 有时间的时候可能会写一篇。
 
-没什么其他可说的，如果想看代码可以去 [Github](https://github.com/hellokaton){:target="_blank"}，想看视频教程可以去 [Youtube](https://www.youtube.com/channel/UCmlhPmTdqYhRWwWZWSIBwGw){:target="_blank"} 频道。
+目前从事 IT 行业。喜爱阅读、美食、电影和一切美的事物，也喜欢哲学、运动和历史。我是一个[INFP](http://www.personalitypage.com/INFP.html) 性格的人。
 
-## 编程理念
 
-仰慕「优雅编码的艺术」，追崇实践 + 理论得真知。
+## 更加了解我
 
-## 做过什么
+- 我在[简书](https://www.jianshu.com/u/610a52a4981b)上分享了我在生活和学习方面的零散记录，在 [GitHub](https://github.com/AUGUSTRUSH8) 上维护我的代码以及关注开源项目，在[bilibili](https://space.bilibili.com/211264133)上收藏关注了一些我感兴趣的视频或频道，在[云音乐](https://music.163.com/#/user/home?id=1317013235)上收藏了一些我喜欢的音乐和艺人。
+- 关注我的公众号：野生技术汇
 
-- 2018：翻译 [Docker Curriculum](https://docker-curriculum.biezhi.me/) 指南
-- 2018：发布 [examples](https://examples.codesofun.com/){:target="_blank"} 常用代码分享博客
-- 2018：创建 20DaysOfCode 开发者训练计划
-- 2018：创建 「代码真香」Youtube 频道
-- 2018：开源 [profit](https://github.com/hellokaton/profit){:target="_blank"}：在线打赏系统
-- 2018：开源 [gitmoji](https://github.com/hellokaton/gitmoji-plugin){:target="_blank"}：Git 提交表情插件
-- 2018：开源 [excel-plus](https://github.com/hellokaton/excel-plus){:target="_blank"}：Excel 操作库
-- 2018：开源 [eve](https://github.com/hellokaton/eve){:target="_blank"}：一个简单的命令行新闻客户端
-- 2018：开源 [anima](https://github.com/hellokaton/anima){:target="_blank"}：小而美的数据库操作库
-- 2018：发布 [elves](https://github.com/hellokaton/elves){:target="_blank"}：爬虫框架的设计和实现
-- 2018：发布 [learn-java8](https://github.com/hellokaton/learn-java8){:target="_blank"} Java 8 视频课程
-- 2017：发布 [bye-2017](https://github.com/hellokaton/bye-2017){:target="_blank"}：年终总结统计
-- 2017：开源 [geekbb](https://github.com/hellokaton/geekbb){:target="_blank"}：极简程序员论坛
-- 2017：开源 [mrpc](https://github.com/kongzhongfinance/mrpc){:target="_blank"}：分布式服务治理框架
-- 2017：开源 [tale](https://github.com/otale/tale){:target="_blank"}：美观方便的博客系统
-- 2016：开源 [wechat-api](https://github.com/hellokaton/wechat-api){:target="_blank"}：微信机器人 SDK
-- 2015：开源 [blade](https://github.com/lets-blade/blade){:target="_blank"}：高性能简洁优雅的 MVC 框架
+欢迎和我一起交流。
+
+
+## 为什么要写这个博客？
+
+花时间进行写作是一件很有意义也很值得去做的事。我希望能在这里来分享技术、记录生活，同时也希望能结交到更多朋友。
+
+本站使用 GitHub Page 和 Jekyll 进行搭建，如果你喜欢这个博客，可以 Fork 我的[源代码](https://github.com/AUGUSTRUSH8/AugustRush8.github.io)进行修改。
 
 ## 版权说明
 
-我坚信着开放、自由和乐于分享是推动计算机技术发展的动力之一。所以本站所有内容均采用[署名 4.0 国际（CC BY
-4.0）](http://creativecommons.org/licenses/by/4.0/deed.zh)创作共享协议。通俗地讲，只要在使用时署名，那么使用者可以对本站所有内容进行转载、节选、二次创作，并且允许商业性使用。
+我坚信着开放、自由和乐于分享是推动计算机技术发展的动力之一。所以本站所有内容均采用[署名 4.0 国际（CC BY 4.0）](http://creativecommons.org/licenses/by/4.0/deed.zh)创作共享协议。通俗地讲，只要在使用时署名，那么使用者可以对本站所有内容进行转载、节选、二次创作，并且允许商业性使用。
 
-## 其他
+## 联系我
 
-我的博客使用 Jekyll 搭建，源码托管在 [Github](https://github.com/hellokaton/blog){:target="_blank"}。如果你有什么自认为伟大的想法或者想对我说的请发送邮件至 `hellokaton#gmail.com`，注意逻辑清晰，表明来意，否则不回复。
+欢迎关注我的微博 [@rush在行动](https://weibo.com/{{site.author.weibo}})，或发邮件到 [{{site.author.email}}](mailto:{{site.author.email}}) 与我联系。你也可以通过页面左下角的链接给我留言。
 
-<!-- Add Disqus Comments -->
-{% if site.disqus %}
-{% include disqus.html %}
-{% endif %}
+
