@@ -60,7 +60,7 @@ public static native void sleep(long millis) throws InterruptedException;
 
 **线程状态图**
 
-![thread_status]({{ "/public/images/2019/01/thread_status.png" | prepend: site.cdnurl }} "java thread status" )
+![thread_status]({{ "/public/images/2019/01/thread_status.png"}} "java thread status" )
 
 # 通过例子解释
 
@@ -107,7 +107,7 @@ Hello End
 
 ## 这说明什么问题？
 
-![sleep]({{ "/public/images/2019/01/sleep.png" | prepend: site.cdnurl }} "sleep" ){:width="500px"}
+![sleep]({{ "/public/images/2019/01/sleep.png"}} "sleep" ){:width="500px"}
 
 我们再回头来看看上面注释中写到 _该线程不丢失任何管程的所属权。_ 什么意思呢，就是说在执行 `sleep` 方法的时候，如果当前线程持有一把锁那么不会被释放。对于 `hello` 这个方法而言，调用者是主线程，持有的锁是 `hiSleep` 实例，正是因为 `synchronized` 内的代码没有执行完，锁没有被释放，所以上面的输出会等待 3 秒后输出 “Hello End”、“我是子线程”。
 
@@ -219,7 +219,7 @@ public class HiWait implements Runnable {
 
 `Thread-0` 就是我们启动的线程，此时可以看到状态是 `WAITING`，在对象管程上阻塞。也就是说 `wait` 会持有当前 `synchronized` 的锁不释放，根据前面 JDK 的描述也说了，**直到在其他线程调用此对象的 notify() 方法或 notifyAll()**。如果没有其他线程调用唤醒方法实际情况是怎样的呢？
 
-![thread monitor]({{ "/public/images/2019/01/thread_monitor.png" | prepend: site.cdnurl }} "thread monitor" ){:width="580"}
+![thread monitor]({{ "/public/images/2019/01/thread_monitor.png"}} "thread monitor" ){:width="580"}
 
 每个线程都有两个 `ObjectMonitor` 对象列表，分别为 free 和 used 列表，如果当前 free 列表为空，线程将向全局global list请求分配ObjectMonitor。
 

@@ -7,7 +7,7 @@ order: 5
 ---
 
 {% if site.author.photo %}
-![{{ site.author.name }}]({{ site.author.photo | prepend: site.cdnurl }}){:.me}
+![{{ site.author.name }}]({{ site.author.photo }}){:.me}
 {% endif %}
 
 博客只有在想起来 && 有时间的时候可能会写一篇。
