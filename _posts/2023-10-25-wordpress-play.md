@@ -103,6 +103,12 @@ docker-compose -f docker-compose.wordpress.yml down #停止并删除服务
 
 后台主题市场的主题有很多可以选择，但是对国内的不是很友好，可以找一些国内的免费主题安装上，如果有些特殊的需求，也可以找国内的商用主题购买安装，主题选择方面后面有机会再开一篇文章推荐。这里说一个主题上传过程中的坑。
 
+```
+PS：我这里采用的Ri-Pro5 theme，感兴趣的朋友可以试试，请支持正版！
+https://webphp.lanzoum.com/itft2148obsh
+密码:`be56`
+```
+
 上传主题时会提示你：`The uploaded file exceeds the upload_max_filesize directive in php.ini.`
 
 我们进到容器内部去找这个`php.ini`文件又找不到，这就很尴尬了。经过摸索，比较详细的修改配置步骤如下：
