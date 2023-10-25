@@ -25,11 +25,20 @@ tags: [blog]
 最主流的就是老牌的Disqus，使用的人多，但是缺点是对中国大陆区不是很友好，主流的登录方式都是国内不能访问的。其配置步骤也比较简单，注册Disqus后拿到shortname，然后配置到jekyll配置文件里就好了，使用成本并不高，简单步骤[看这里](https://www.cnblogs.com/travislee/p/7047577.html)。
 
 看其他有些博客使用的是giscus，可以直接使用Github登录，而且速度还比较快，等以后有需要再看看。
+2023-10-25 update:
+"Giscus是一个利用 GitHub Discussions 实现的评论系统，让访客可以借助 GitHub 在你的网站上留下评论和反应。只需简单的几步就能接入到自己的网站里。"
+核心配置三步：
+1、创建一个Github仓库，设置仓库权限为Public
+2、开启该仓库的Discussions功能
+3、为该仓库安装Giscus的Github App
+4、点击这个[链接](https://giscus.app/zh-CN)，输入用户名/仓库名，勾选下面的配置项来自动生成配置
+5、复制页面生成的JS代码粘贴到对应POST模板页面当中合适位置就行
+详细步骤配图参考[地址](https://aifuxi.cool/articles/use_giscus_as_the_commenting_system_for_your_website)
 
 # 博客备案
 这个不想多说，是个老大难的事情，看了不少人的吐槽，实在是个烦人的东西，但站点如果主要是国内用户访问的话最好还是备案下。
 
 # 参考文章
-- [1] [使用cdn加速Github Pages的访问速度](https://www.jun997.xyz/2022/05/18/62ef741104da.html)
-- [2] [利用CDN加速你的Github Pages](https://blog.csdn.net/aa464971/article/details/87884798)
+- [1] [使用cdn加速Github Pages的访问速度](https://www.jun997.xyz/2022/05/18/62ef741104da.html)
+- [2] [利用CDN加速你的Github Pages](https://blog.csdn.net/aa464971/article/details/87884798)
 - [3] [github + jekyll 搭建博客](https://wenfh2020.com/2020/02/17/make-blog/)
