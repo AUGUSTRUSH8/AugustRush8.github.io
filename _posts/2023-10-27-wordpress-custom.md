@@ -125,6 +125,14 @@ $i = 0;
 背景说明：给文章生成目录提高阅读体验
 实现方式：安装`Rich Table of Contents`插件。注意，刚装上插件不进行设置的话页面内容可能会不可见，安装好以后先进行设置，参考[设置指导](https://boke112.com/post/7343.html)
 
+# 网站Logo篇
+## 网站左侧顶部Logo
+1、先使用网站`https://looka.com/`生成
+2、再使用网站`https://www.remove.bg/zh`去除背景
+
+## 网站Favico
+使用网站`https://favicon.io/`进行创作
+
 # 附录
 ripro主题常见主题代码目录
 ```
