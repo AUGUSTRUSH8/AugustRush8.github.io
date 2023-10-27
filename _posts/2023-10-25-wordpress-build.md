@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Wordpress折腾记'
+title: 'Wordpress基础搭建'
 tags: [blog]
 ---
 
@@ -158,6 +158,14 @@ root@cdae0b8ff9d7:/usr/local/etc/php# vi php.ini
 root@cdae0b8ff9d7:/usr/local/etc/php# exit # 退出容器
 exit
 root@chillifish:~# docker restart cdae0b8ff9d7 cdae0b8ff9d7 #回车重启WordPress容器
+```
+
+# 附录
+包括但不限于wordpress的好看主题
+```
+hugo主题：https://github.com/joway/hugo-theme-yinyang
+ripro主题：https://ritheme.com/
+主题store：https://www.nicetheme.cn/
 ```
 
 # 参考文章
